@@ -95,3 +95,13 @@ body {
 .show {
     display: block;
 }
+
+#alert {
+    position: fixed;
+    bottom: 0;
+    right: 1%;
+}
+
+a.nav-link.active:not(#back) {
+    background: #EAEAEA !important;
+}

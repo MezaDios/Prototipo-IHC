@@ -62,8 +62,8 @@
                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <a id="back" class="nav-link bg-dark border text-white my-2 text-center" id="home-tab"
                         data-toggle="pill" href="#home" role="tab" aria-controls="home" aria-selected="true"
-                        data-toggle="tooltip" data-placement="bottom" title="Back"><i
-                            class="fas fa-chevron-left"></i></a>
+                        data-toggle="tooltip" data-placement="bottom" title="Back"><i class="fas fa-chevron-left"></i>
+                        Back</a>
                     <a class="nav-link bg-light border text-dark my-2" id="interface-tab" data-toggle="pill"
                         href="#interface" role="tab" aria-controls="interface" aria-selected="false">Interface</a>
                     <a class="nav-link bg-light border text-dark my-2" id="keyMapping-tab" data-toggle="pill"
@@ -72,12 +72,70 @@
             </div>
             <div class="col-8 bg-light pt-3">
                 <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade active show" id="keyMapping" role="tabpanel"
-                        aria-labelledby="keyMapping-tab">
+                    <div class="tab-pane fade" id="keyMapping" role="tabpanel" aria-labelledby="keyMapping-tab">
                         <h1 class="text-dark text-center">SETTINGS</h1>
+
                     </div>
-                    <div class="tab-pane fade" id="interface" role="tabpanel" aria-labelledby="interface-tab">
+                    <div class="tab-pane fade active show" id="interface" role="tabpanel"
+                        aria-labelledby="interface-tab">
                         <h1 class="text-dark text-center">SETTINGS</h1>
+                        <div class="form-group mb-2">
+
+                        </div>
+                        <hr>
+                        <div class="form-group my-4">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="formControlRange">Resolution</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <button id="bResolution" class="btn btn-dark">
+                                                        <i class="fas fa-angle-left"></i>
+                                                    </button>
+                                                </div>
+                                                <div class="col-8 d-flex justify-content-center align-items-center">
+                                                    <h6 id="resolution" class="text-center">1280 x 720</h6>
+                                                </div>
+                                                <div class="col-2">
+                                                    <button id="fResolution" class="btn btn-dark">
+                                                        <i class="fas fa-angle-right"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group my-4">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label for="formControlRange">Volume</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-2"><span>0</span></div>
+                                                <div class="col-8">
+                                                    <input id="volume" type="range" class="form-control-range">
+                                                </div>
+                                                <div class="col-2"><span>100</span></div>
+                                            </div>
+                                            <div class="row">
+                                                <span id="volumeStatus" class="text-muted mx-auto"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
                     </div>
                 </div>
             </div>
@@ -108,7 +166,14 @@
         </div>
     </div>
 
+    <!--Alert-->
 
+    <div id="alert" class="alert alert-success alert-dismissible fade" role="alert">
+        Your <strong>settings</strong> were saved successfully.
+        <button id="closeAlert" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
