@@ -12,7 +12,24 @@ for (let button of buttons) {
     button.onmouseout = e => {
         button.classList.remove('animated', 'pulse');
     }
-    button.onclick = e => {
+}
+
+
+let sonideros = document.getElementsByTagName("button");
+
+for (let sonidero of sonideros) {
+    sonidero.onclick = e => {
         snd.play();
     }
 }
+
+
+let exit = document.getElementById('exitYes');
+exit.onclick = e => {
+    alert("Saliste.\nBye\nAnimación bien aca de salida.");
+}
+
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
