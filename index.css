@@ -56,5 +56,15 @@ body {
 }
 
 .secondary {
-    width: 100%;
+    width: 95%;
+    box-sizing: border-box;
+}
+
+#settings {
+    margin-right: 5%;
+}
+
+#exit {
+
+    margin-left: 5%;
 }
