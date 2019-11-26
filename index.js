@@ -241,3 +241,9 @@ btnSave.onclick = e => {
 
     localStorage.setItem('color', cIndex);
 }
+
+
+let btnPlay = document.getElementById("play");
+btnPlay.onclick = e => {
+    alert("Animación de entrada bien aca.");
+}
