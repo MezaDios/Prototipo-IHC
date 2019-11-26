@@ -207,6 +207,29 @@ resetSettings = () => {
     font.style.fontSize = `${fonts[1][fIndex]}`;
 }
 
+setSettings = () => {
+
+    volume = localStorage.getItem('volume');
+    res = localStorage.getItem('resolution');
+    color = localStorage.getItem('color');
+    fontSize = localStorage.getItem('font');
+
+    volControl.value = (volume == null) ? 75 : volume * 100;
+    volStatus.innerText = `Current value: ${volControl.value}`;
+
+    snd.volume = volume;
+
+    rIndex = (res == null) ? 1 : res;
+    resolution.innerText = `${resolutions[rIndex]}`;
+
+    cIndex = (color == null) ? 0 : color;
+    colorText.innerText = `${colors[0][cIndex]}`;
+    img.src = `${colors[1][cIndex]}`;
+
+    fIndex = (fontSize == null) ? 1 : fontSize;
+    font.innerText = `${fonts[0][fIndex]}`;
+    font.style.fontSize = `${fonts[1][fIndex]}`;
+}
 
 let btnBack = document.getElementById("back");
 
@@ -240,6 +263,8 @@ btnSave.onclick = e => {
     localStorage.setItem('font', fIndex);
 
     localStorage.setItem('color', cIndex);
+
+    setSettings();
 }
 
 
