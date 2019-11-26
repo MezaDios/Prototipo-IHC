@@ -83,6 +83,9 @@ let resolution = document.getElementById("resolution");
 let btnbRes = document.getElementById("bResolution");
 let btnfRes = document.getElementById("fResolution");
 
+resolution.innerText = `${resolutions[rIndex]}`;
+
+
 btnbRes.onclick = e => {
     if (rIndex > 0) {
         rIndex--;
@@ -107,3 +110,83 @@ btnfRes.onclick = e => {
     }
 }
 
+let colors = [
+    ["Default", "Colorblind mode"],
+    ["./normal.jpeg", "./daltonico.jpeg"]
+];
+let color = localStorage.getItem('color');
+let cIndex = (color == null) ? 0 : color;
+
+let colorText = document.getElementById("color");
+let btnbColor = document.getElementById("bColor");
+let btnfColor = document.getElementById("fColor");
+
+let img = document.getElementById("image");
+colorText.innerText = `${colors[0][cIndex]}`;
+img.src = `${colors[1][cIndex]}`;
+
+btnbColor.onclick = e => {
+    if (cIndex > 0) {
+        cIndex--;
+        colorText.innerText = `${colors[0][cIndex]}`;
+        img.src = `${colors[1][cIndex]}`;
+        snd.play();
+        btnfColor.disabled = false;
+        if (cIndex == 0) {
+            btnbColor.disabled = true;
+        }
+    }
+}
+
+btnfColor.onclick = e => {
+    if (cIndex < colors[0].length - 1) {
+        cIndex++;
+        colorText.innerText = `${colors[0][cIndex]}`;
+        img.src = `${colors[1][cIndex]}`;
+        snd.play();
+        btnbColor.disabled = false;
+        if (cIndex == colors[0].length - 1) {
+            btnfColor.disabled = true;
+        }
+    }
+}
+
+let fonts = [
+    ["Small", "Default", "Big"],
+    ["0.75rem", "1rem", "1.5rem"]
+];
+let fontSize = localStorage.getItem('font');
+let fIndex = (fontSize == null) ? 1 : fontSize;
+
+let font = document.getElementById("font");
+let btnbFont = document.getElementById("bFont");
+let btnfFont = document.getElementById("fFont");
+
+font.innerText = `${fonts[0][fIndex]}`;
+font.style.fontSize = `${fonts[1][fIndex]}`;
+
+btnbFont.onclick = e => {
+    if (fIndex > 0) {
+        fIndex--;
+        font.innerText = `${fonts[0][fIndex]}`;
+        font.style.fontSize = `${fonts[1][fIndex]}`;
+        snd.play();
+        btnfFont.disabled = false;
+        if (fIndex == 0) {
+            btnbFont.disabled = true;
+        }
+    }
+}
+
+btnfFont.onclick = e => {
+    if (fIndex < fonts[0].length - 1) {
+        fIndex++;
+        font.innerText = `${fonts[0][fIndex]}`;
+        font.style.fontSize = `${fonts[1][fIndex]}`;
+        snd.play();
+        btnbFont.disabled = false;
+        if (fIndex == fonts[0].length - 1) {
+            btnfFont.disabled = true;
+        }
+    }
+}
