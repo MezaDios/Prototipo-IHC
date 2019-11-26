@@ -41,3 +41,16 @@ exit.onclick = e => {
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
+
+
+let btnSettings = document.getElementById("settings");
+
+btnSettings.onclick = e => {
+    btnSettings.classList.remove('active');
+}
+
+let btnBack = document.getElementById("back");
+
+btnBack.onclick = e => {
+    btnBack.classList.remove('active');
+}

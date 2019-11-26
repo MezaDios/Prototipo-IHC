@@ -91,3 +91,7 @@ body {
 .fade:not(.show) {
     display: none;
 }
+
+.show {
+    display: block;
+}
