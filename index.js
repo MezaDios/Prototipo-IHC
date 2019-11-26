@@ -23,6 +23,14 @@ for (let sonidero of sonideros) {
     }
 }
 
+let botones = document.getElementsByTagName("a");
+
+for (let boton of botones) {
+    boton.onclick = e => {
+        snd.play();
+    }
+}
+
 
 let exit = document.getElementById('exitYes');
 exit.onclick = e => {
