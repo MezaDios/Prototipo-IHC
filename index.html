@@ -83,7 +83,7 @@
 
                         </div>
                         <hr>
-                        <div class="form-group my-4">
+                        <div class="form-group">
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-4">
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="form-group my-4">
+                        <div class="form-group">
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-4">
@@ -144,7 +144,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="form-group my-4">
+                        <div class="form-group">
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-4">
@@ -168,7 +168,7 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="form-group my-4">
+                        <div class="form-group">
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-4">
@@ -197,6 +197,24 @@
                             </div>
                         </div>
                         <hr>
+                        <div class="form-group">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button id="save" class="btn btn-success w-100" data-toggle="pill" href="#home"
+                                            role="tab" aria-controls="home" aria-selected="true">
+                                            <i class="fas fa-save"></i> Save
+                                        </button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button id="cancel" class="btn btn-danger w-100" data-toggle="pill" href="#home"
+                                            role="tab" aria-controls="home" aria-selected="true">
+                                            <i class="fas fa-times"></i> Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -229,9 +247,16 @@
 
     <!--Alert-->
 
-    <div id="alert" class="alert alert-success alert-dismissible fade" role="alert">
-        Your <strong>settings</strong> were saved successfully.
+    <div id="alert" class="alert alert-danger alert-dismissible fade" role="alert">
+        Your <strong>settings</strong> were discarted.
         <button id="closeAlert" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div id="alertS" class="alert alert-success alert-dismissible fade" role="alert">
+        Your <strong>settings</strong> were saved successfully.
+        <button id="closeAlertS" type="button" class="close" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>

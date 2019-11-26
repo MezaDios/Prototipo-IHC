@@ -96,7 +96,8 @@ body {
     display: block;
 }
 
-#alert {
+#alert,
+#alertS {
     position: fixed;
     bottom: 0;
     right: 1%;

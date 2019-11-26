@@ -1,6 +1,7 @@
 let buttons = document.getElementsByClassName("button");
 let snd = document.getElementById('audio');
 let alt = document.getElementById('alert');
+let altS = document.getElementById('alertS');
 
 let interfaceTab = document.getElementById("interface-tab");
 
@@ -36,6 +37,7 @@ for (let boton of botones) {
 
 let volControl = document.getElementById("volume");
 let volStatus = document.getElementById("volumeStatus");
+
 volControl.value = (volume == null) ? 75 : volume * 100;
 volStatus.innerText = `Current value: ${volControl.value}`;
 volControl.oninput = e => {
@@ -63,16 +65,13 @@ btnSettings.onclick = e => {
     interfaceTab.classList.add('active');
 }
 
-let btnBack = document.getElementById("back");
-
-btnBack.onclick = e => {
-    btnBack.classList.remove('active');
-    snd.play();
-    alt.classList.add('show');
-}
-
 document.getElementById("closeAlert").onclick = e => {
     alt.classList.remove('show');
+    snd.play();
+};
+document.getElementById("closeAlertS").onclick = e => {
+    altS.classList.remove('show');
+    snd.play();
 };
 
 let resolutions = ["640 x 480", "1280 x 720", "1920 x 1080"];
@@ -189,4 +188,56 @@ btnfFont.onclick = e => {
             btnfFont.disabled = true;
         }
     }
+}
+
+
+resetSettings = () => {
+    volControl.value = (volume == null) ? 75 : volume * 100;
+    volStatus.innerText = `Current value: ${volControl.value}`;
+
+    rIndex = (res == null) ? 1 : res;
+    resolution.innerText = `${resolutions[rIndex]}`;
+
+    cIndex = (color == null) ? 0 : color;
+    colorText.innerText = `${colors[0][cIndex]}`;
+    img.src = `${colors[1][cIndex]}`;
+
+    fIndex = (fontSize == null) ? 1 : fontSize;
+    font.innerText = `${fonts[0][fIndex]}`;
+    font.style.fontSize = `${fonts[1][fIndex]}`;
+}
+
+
+let btnBack = document.getElementById("back");
+
+btnBack.onclick = e => {
+    btnBack.classList.remove('active');
+    snd.play();
+    alt.classList.add('show');
+    resetSettings();
+}
+
+let btnCancel = document.getElementById("cancel");
+
+btnCancel.onclick = e => {
+    btnCancel.classList.remove('active');
+    snd.play();
+    alt.classList.add('show');
+    resetSettings();
+}
+
+let btnSave = document.getElementById("save");
+
+btnSave.onclick = e => {
+    btnSave.classList.remove('active');
+    snd.play();
+    altS.classList.add('show');
+
+    localStorage.setItem('volume', volControl.value / 100);
+
+    localStorage.setItem('resolution', rIndex);
+
+    localStorage.setItem('font', fIndex);
+
+    localStorage.setItem('color', cIndex);
 }
